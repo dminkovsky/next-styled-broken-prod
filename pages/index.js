@@ -10,22 +10,19 @@ export default function() {
     );
 }
 
-const Base = styled.div`
-    cursor: pointer;
-    touch-action: none;
-`;
-
 function composeButton(css) {
-    const Root = styled(Base)`
+    const Root = styled.div`
+        cursor: pointer;
+        touch-action: none;
         ${css};
     `;
-    return function ComposeButton(props) {
-        return <Root {...props}>Compose</Root>;
+    return function() {
+        return <Root>Compose</Root>;
     };
 }
 
 const ComposeButton1 = composeButton(
-    css`
+    `
         user-select: none;
         transform: translateX(-3px);
         display: inline-block;
@@ -41,7 +38,7 @@ const ComposeButton1 = composeButton(
 );
 
 const ComposeButton2 = composeButton(
-    css`
+    `
         display: block;
         height: 36px;
         padding: 10px 16px;
